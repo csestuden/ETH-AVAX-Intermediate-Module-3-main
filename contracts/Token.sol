@@ -1,25 +1,34 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-contract Token {
 
-    string public TokenName = "ABC";
-    string public abbrvation = "XYZ";
-    uint public total = 0;
-    
-    mapping (address=> uint) public balances;
+contract MyToken {
+    string public name = "Harsh";
+    string public symbol = "har";
+    uint256 public totalSupply;
+    address public owner;
 
-    function mint(address add, uint val) public {
-        total += val;
-        balances[add] += val;  
+    mapping(address => uint256) public balanceOf;
 
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the owner can call this function");
+        _;
     }
 
-    function burn( address add,uint val) public {
-        if( balances[add] >= val){
-            total -= val;
-            balances[add] -= val;
-        }
-        
+    constructor(uint256 initialSupply) {
+        owner = msg.sender;
+        totalSupply = initialSupply;
+        balanceOf[msg.sender] = totalSupply;
     }
 
+    function mint(address to, uint256 amount) public onlyOwner {
+        require(to != address(0), "Invalid address");
+        balanceOf[to] += amount;
+        totalSupply += amount;
+    }
+
+    function burn(uint256 amount) public {
+        require(balanceOf[msg.sender] >= amount, "Insufficient balance");
+        balanceOf[msg.sender] -= amount;
+        totalSupply -= amount;
+    }
 }
