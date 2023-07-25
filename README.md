@@ -8,7 +8,7 @@ Open your terminal and run these command:
 - npm install
 - npm install -g @remix -project/remixd
 - remixd -s./ --remix-ide https://remix.ethereum.org
-- npx hardhat node
+- npx hardhat node on second terminal
 
 ## Step 2: Open Remix IDE
 Open your web browser and go to [Remix IDE](https://remix.ethereum.org).
