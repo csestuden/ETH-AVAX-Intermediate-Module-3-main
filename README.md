@@ -1,8 +1,7 @@
-# eth-avaxIntMod3
+# Eth-Avax Mod3
 
 Follow the steps below to connect your local Hardhat network with Remix and interact with a contract.
-* [project](https://github.com/ankitjangra114/eth-avaxIntMod3)
-* [Loom](https://www.loom.com/share/688ec01af1e74fe4bca2c46004e77eea)
+ *https://github.com/csestuden/ETH-AVAX-Intermediate-Module-3-main/edit/main/README.md
 
 ## Step 1: Open visual studio code
 Open your terminal and run these command:
